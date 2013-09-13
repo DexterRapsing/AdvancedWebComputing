@@ -87,6 +87,7 @@
 #d{
 	width: 200px;
 	height: 200px;
+	margin-left: 60px;
 }
 #xc{
 
@@ -96,7 +97,7 @@
 /**YLEVOL**/
 #lai{
 float: right;
-margin-right: 50px;
+margin-right: 70px;
 margin-top: 100px;
 }
 
