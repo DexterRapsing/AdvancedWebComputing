@@ -1,9 +1,8 @@
 var key = "txkk8d53p6vt7twxqvb8p7ub";
 
-
 $(function(){
 
-  $('input').focus(function(){
+  $('#searchtxt').focus(function(){
       var full = $(".divmovie43").has("img").length ? true : false;
       if(full == 'false'){
          $('.divmovie43').empty();
@@ -11,10 +10,23 @@ $(function(){
   });
 
 
-$("input").empty();
-$("button").click(function(){ 
-    search();
+$('#searchtxt').empty();
+$('#searchbtn').click(function(){ 
+	if ($('#searchtxt').val() == '') {
+			$('h4').replaceWith('<h4> Undefined search. </h4>')
+			$('.divmovie43').replaceWith($('<div class = ".divmovie43"</div>'));
+		} 
+	else{
+		$('h4').replaceWith('<h4> Movie search reuslts. </h4>')
+		search();
+	}
  });
+
+$('#searchtxt').keydown(function(event){
+		if (event.which == 13) {
+			$('#searchbtn').click();
+		};
+	});
 
   function search() {
         $.ajax({
@@ -29,49 +41,7 @@ $("button").click(function(){
 
      }
 
-function boxMovie(){
-		var server = 'http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json';
-		$.ajax({
-			url: server,
-			dataType: 'jsonp',
-			data: {
-				apikey: key,
-				limit: 10,
-				country: 'ph'
-			},
-			success: showMovies
-		});
-	}
-	
-	//In Theaters Movies
-	function intMovie(){
-		var server = 'http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json';
-		$.ajax({
-			url: server,
-			dataType: 'jsonp',
-			data: {
-				apikey: key,
-				page_limit: 10,
-				page: pageNum,
-				country: 'ph'
-			},
-			success: showMovies
-		});
-	}
 
-	function upMovie(){
-		var server = 'http://api.rottentomatoes.com/api/public/v1.0/lists/movies/upcoming.json';
-		$.ajax({
-			url: server,
-			dataType: 'jsonp',
-			data: {
-				apikey: key,
-				page_limit: 10,
-				country: 'ph'
-			},
-			success: showMovies
-		});
-	}
 
 
     function showList(response) {
@@ -83,7 +53,7 @@ function boxMovie(){
             /**$('#page_three').append('<h3>' + movie.title + '</h3>');**/
 
             $('#movie43').append(
-              '<div id = "post1"><div class = "innerdiv"><img id = "thumb" src="' + movie.posters.original + '" /></div><div class = "innerdiv"><h5> '+ movie.title +'</h5></div></div>');
+              '<div id = "post1"><div class = "innerdiv"><img id = "thumb" src="' + movie.posters.original + '" /></div><div class = "innerdiv"><h6> '+ movie.title +'</h6></div></div>');
             
            
         }
