@@ -1,9 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+		<title>MovieSearcher</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	
+	
 </head>
 <body>
+<div class="main">
 
+	<nav class="navbar navbar-inverse" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">Brand</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Link</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          	<li><a href="#">Top Box Office</a></li>
+	        <li><a href="#">Showing</a></li>
+	        <li><a href="#">Coming Soon</a></li>
+	        <li><a href="#">Top Movies</a></li>
+        </ul>
+      </li>
+    </ul>
+    <form class="navbar-form navbar-left" role="search">
+      <ul class="nav navbar-nav navbar-right">
+      <div class="form-group">
+        	        <input type="text" class="form-control" id="searchtxt" placeholder="Search for movies" onkeypress="if (event.which==13){ search();}"></input>
+      </div>
+      <button class="btn btn-primary" id="searchbtn" onclick="search()">Go!</button>
+    </ul>
+    </form>
+   
+  </div><!-- /.navbar-collapse -->
+</nav>
+
+	<div id='result-container'>
+    	<h3></h3>
+    </div>
+	<div class="divmovie43" id="divmovie43">
+		<div class ="movie43" id="movie43"></div>
+	</div>
+
+
+</div>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" srs="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/dropdown.js"></script>
 </body>
 </html>
