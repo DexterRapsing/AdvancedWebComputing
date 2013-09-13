@@ -34,4 +34,30 @@
 	width: 150px;
 	padding: 8px;
 }
+.footer{
+	width: auto;
+	height: 80px;
+	margin-top: 20px;
+	background-color: #101010;
+	-webkit-border-radius: 8px;
+	border-radius: 4px;
+}
+#grp{
+	padding: 20px;
+}
+#grp #c{
+	color: #ffffff;
+	font-weight:  bold;
+	font-size: 10pt;
+	float: left;
+	margin-top: 5px;
+}
+#neym{
+	color: #f0ad4e;
+	font-size: 14pt;
+	font-weight: bolder;
+	margin-left: 5px;
+	font-family: magneto;
+}
 	
+
